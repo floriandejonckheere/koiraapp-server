@@ -12,4 +12,8 @@ class ShelterSerializer < CacheCrispies::Base
             :longitude,
             :phone,
             :url
+
+  serialize :image do
+    "house"
+  end
 end
