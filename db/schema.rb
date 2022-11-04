@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_215443) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_04_222643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "dogs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "species"
+    t.date "birthdate"
+    t.string "sex"
+    t.string "description"
+    t.uuid "shelter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shelter_id"], name: "index_dogs_on_shelter_id"
+  end
 
   create_table "shelters", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
@@ -35,4 +47,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_215443) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "dogs", "shelters"
 end
