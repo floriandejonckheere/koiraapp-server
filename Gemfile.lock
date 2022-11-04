@@ -82,6 +82,9 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cache_crispies (1.3.2)
+      oj (~> 3.7)
+      railties (>= 5.0.0, < 8.0)
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crack (0.4.5)
@@ -129,6 +132,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
+    oj (3.13.22)
     overcommit (0.59.1)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
@@ -243,6 +247,7 @@ DEPENDENCIES
   annotate!
   bcrypt (~> 3.1.7)
   bootsnap
+  cache_crispies
   debug
   factory_bot
   factory_bot_rails
