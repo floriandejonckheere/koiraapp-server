@@ -69,12 +69,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  # Static code analysis tools
-  gem "brakeman"
-  gem "fasterer"
-  gem "flay"
+  # Git pre-commit hooks
   gem "overcommit"
-  gem "pronto"
-  gem "rails_best_practices"
-  gem "reek"
 end
