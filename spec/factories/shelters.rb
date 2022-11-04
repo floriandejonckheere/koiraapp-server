@@ -8,6 +8,6 @@ FactoryBot.define do
     longitude { 24 + rand(0.0..1.0) }
     phone { FFaker::PhoneNumber.phone_number }
     email { FFaker::Internet.email }
-    website { FFaker::Internet.http_url }
+    url { FFaker::Internet.http_url }
   end
 end
