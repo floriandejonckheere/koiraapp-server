@@ -2,6 +2,8 @@
 
 class Shelter < ApplicationRecord
   validates :name, presence: true
+
+  has_many :dogs, dependent: :destroy
 end
 
 # == Schema Information
@@ -11,6 +13,7 @@ end
 #  id         :uuid             not null, primary key
 #  address    :string
 #  email      :string
+#  icon       :string
 #  latitude   :float
 #  longitude  :float
 #  name       :string           not null
