@@ -9,8 +9,13 @@ class ShelterSerializer < CacheCrispies::Base
             :address,
             :email,
             :phone,
-            :url,
-            :icon
+            :url
+
+  serialize :icon do
+    "house"
+  end
+
+  serialize :image_url, from: :icon
 
   serialize :latitude do |model, _options|
     model.latitude || 60.192059
