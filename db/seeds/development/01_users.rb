@@ -4,8 +4,8 @@ puts "== Creating users =="
 
 return if User.any?
 
-User.create!(name: "Darth Vader", email: "darthvader@example.com")
-User.create!(name: "Luke Skywalker", email: "lukeskywalker@example.com")
-User.create!(name: "Obi-Wan Kenobi", email: "obiwankenobi@example.com")
-User.create!(name: "Han Solo", email: "hansolo@example.com")
-User.create!(name: "Chewbacca", email: "chewbacca@example.com")
+User.create!(name: "Jimi Tuomaala", email: "jimi.tuomaala@example.com")
+User.create!(name: "Hannes Koivula", email: "hannes.koivula@example.com")
+User.create!(name: "Lari Mikkola", email: "lari.mikkola@example.com")
+User.create!(name: "Untamo Partanen", email: "untamo.partanen@example.com")
+User.create!(name: "Into Isotalo", email: "into.isotalo@example.com")
