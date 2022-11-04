@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources "shelters", only: [:index]
+  resources "dogs", only: [:index]
 end
 
 # == Route Map
 #
 #                          Prefix Verb URI Pattern                                                                                       Controller#Action
 #                        shelters GET  /shelters(.:format)                                                                               shelters#index
+#                            dogs GET  /dogs(.:format)                                                                                   dogs#index
 #              rails_service_blob GET  /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)                               active_storage/blobs/redirect#show
 #        rails_service_blob_proxy GET  /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)                                  active_storage/blobs/proxy#show
 #                                 GET  /rails/active_storage/blobs/:signed_id/*filename(.:format)                                        active_storage/blobs/redirect#show
