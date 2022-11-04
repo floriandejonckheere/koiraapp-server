@@ -1,0 +1,46 @@
+FROM ruby:3.1-alpine AS ruby
+
+WORKDIR /app/
+
+# Install system dependencies
+RUN apk add --no-cache build-base curl-dev git postgresql-dev cmake tzdata
+
+# Install Bundler
+RUN gem update --system && gem install bundler
+
+# Install Gem dependencies
+ADD Gemfile /app/
+ADD Gemfile.lock /app/
+
+RUN bundle config set --local without "development test" && \
+    bundle config set --local jobs 4 && \
+    bundle config set --local deployment true && \
+    bundle install
+
+FROM ruby
+
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+
+WORKDIR /app/
+
+# Add user
+ARG USER=docker
+ARG UID=1000
+ARG GID=1000
+
+RUN addgroup -g $GID $USER
+RUN adduser -D -u $UID -G $USER -h /app/ $USER
+
+# Add application
+ADD . /app/
+
+RUN mkdir -p /app/tmp/pids/
+RUN chown -R $UID:$GID /app/
+
+# Change user
+USER $USER
+
+EXPOSE 3000
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

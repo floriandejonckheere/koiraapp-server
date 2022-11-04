@@ -1,0 +1,32 @@
+version: "3.8"
+
+x-app: &app
+  build: .
+  volumes:
+    - .:/app/:cached
+    - bundle:/usr/local/bundle/
+  depends_on:
+    - postgres
+  env_file:
+    - .development.env
+
+services:
+  postgres:
+    image: postgres:14
+    volumes:
+      - postgres:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  app:
+    <<: *app
+    tty: true
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres:
+  bundle:
