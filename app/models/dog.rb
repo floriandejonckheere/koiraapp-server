@@ -4,6 +4,8 @@ class Dog < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :shelter
+
+  has_many_attached :images
 end
 
 # == Schema Information

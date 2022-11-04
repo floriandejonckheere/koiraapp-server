@@ -6,7 +6,7 @@ return if Dog.any?
 
 shelters = Shelter.all
 
-Dog.create!(
+arman = Dog.create!(
   name: "Arman",
   species: "German sheppard",
   birthdate: "19.07.2016",
@@ -18,3 +18,5 @@ Being alone has gone without any problems, he hasn't caused havoc or barked on h
 We are looking for an adult home for Armani in a detached house in a quiet residential area, and the prospective home is expected to have experience with German shepherds or other service dog breeds. The future home must commit to taking care of the dog's daily ample amount of exercise, activation and training. Not placed in a family with children. Arman is clean inside and in a foster home in Vihti where he can get to know the boy as agreed.",
   shelter: shelters.sample,
 )
+
+Dir[Rails.root.join("data/arman/*.jpg")].each { |f| arman.images.attach(io: File.open(f), filename: File.basename(f)) }
