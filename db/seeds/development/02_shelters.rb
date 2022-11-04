@@ -10,7 +10,7 @@ Shelter.create!(
   latitude: 60.231120,
   longitude: 24.858370,
   phone: "050 414 0000",
-  website: "http://www.hesy.fi/",
+  url: "http://www.hesy.fi/",
 )
 
 Shelter.create!(
@@ -19,12 +19,12 @@ Shelter.create!(
   latitude: 60.222800,
   longitude: 25.021370,
   phone: "040 1980778",
-  website: "https://www.viikinloytoelaintalo.fi/",
+  url: "https://www.viikinloytoelaintalo.fi/",
 )
 
 Shelter.create!(
   name: "Rekku Rescue ry",
-  website: "https://rekkurescue.com/",
+  url: "https://rekkurescue.com/",
 )
 
 Shelter.create!(
@@ -33,5 +33,5 @@ Shelter.create!(
   latitude: 60.183890,
   longitude: 24.962170,
   phone: "0207 528 420",
-  website: "https://sey.fi/",
+  url: "https://sey.fi/",
 )

@@ -15,7 +15,7 @@ end
 #  longitude  :float
 #  name       :string           not null
 #  phone      :string
-#  website    :string
+#  url        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

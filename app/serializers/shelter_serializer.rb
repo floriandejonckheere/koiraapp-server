@@ -8,5 +8,5 @@ class ShelterSerializer < CacheCrispies::Base
             :latitude,
             :longitude,
             :phone,
-            :website
+            :url
 end

@@ -9,7 +9,7 @@ class CreateShelters < ActiveRecord::Migration[6.1]
       t.float :longitude
       t.string :phone
       t.string :email
-      t.string :website
+      t.string :url
 
       t.timestamps
     end
