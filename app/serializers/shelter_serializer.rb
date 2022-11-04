@@ -12,7 +12,7 @@ class ShelterSerializer < CacheCrispies::Base
             :url
 
   serialize :icon do
-    "house"
+    "pawprint.fill"
   end
 
   serialize :image_url, from: :icon
