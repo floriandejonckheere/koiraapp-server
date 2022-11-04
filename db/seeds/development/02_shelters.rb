@@ -25,11 +25,6 @@ Shelter.create!(
 )
 
 Shelter.create!(
-  name: "Rekku Rescue ry",
-  url: "https://rekkurescue.com/",
-)
-
-Shelter.create!(
   name: "SEY ry",
   address: "Lintulahdenkatu 1000500, Helsinki",
   latitude: 60.183890,
