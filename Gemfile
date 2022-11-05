@@ -35,6 +35,9 @@ gem "image_processing", "~> 1.2"
 # Speedy Rails JSON serialization with built-in caching
 gem "cache_crispies"
 
+# Use sidekiq as asynchronous job queue
+gem "sidekiq"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]

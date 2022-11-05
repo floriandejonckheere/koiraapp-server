@@ -7,6 +7,7 @@ x-app: &app
     - bundle:/usr/local/bundle/
   depends_on:
     - postgres
+    - redis
   env_file:
     - .development.env
 
@@ -17,9 +18,18 @@ services:
       - postgres:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
+    networks:
+      - fcloud
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:alpine
+    networks:
+      - fcloud
+    volumes:
+      - redis:/data/
 
   app:
     <<: *app
@@ -43,8 +53,15 @@ services:
 
       traefik.http.services.koira.loadbalancer.server.port: "3000"
 
+  sidekiq:
+    <<: *app
+    networks:
+      - fcloud
+    command: bundle exec sidekiq
+
 volumes:
   postgres:
+  redis:
   bundle:
 
 networks:
