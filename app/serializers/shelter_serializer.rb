@@ -23,4 +23,6 @@ class ShelterSerializer < CacheCrispies::Base
   serialize :longitude do |model, _options|
     model.longitude || 24.945831
   end
+
+  serialize :dogs, with: DogSerializer
 end
