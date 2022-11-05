@@ -10,6 +10,7 @@ YAML.load_file("#{__dir__}/dogs.yml").each do |attributes|
   dog = Dog.create!(**attributes.merge(shelter: shelters.sample))
 
   Dir[Rails.root.join("data/#{attributes['name'].downcase}/*.jpg")].each do |f|
-    dog.images.attach(io: File.open(f), filename: File.basename(f))
+    blob = ActiveStorage::Blob.create_and_upload!(io: File.open(f), filename: File.basename(f))
+    dog.images.attach(blob)
   end
 end
