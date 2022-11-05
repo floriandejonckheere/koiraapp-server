@@ -10,6 +10,7 @@ class CreateShelters < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :email
       t.string :url
+      t.string :image_url
 
       t.timestamps
     end

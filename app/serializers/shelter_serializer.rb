@@ -9,13 +9,12 @@ class ShelterSerializer < CacheCrispies::Base
             :address,
             :email,
             :phone,
-            :url
+            :url,
+            :image_url
 
   serialize :icon do
     "pawprint.fill"
   end
-
-  serialize :image_url, from: :icon
 
   serialize :latitude do |model, _options|
     model.latitude || 60.192059

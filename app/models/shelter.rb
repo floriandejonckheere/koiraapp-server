@@ -13,7 +13,7 @@ end
 #  id         :uuid             not null, primary key
 #  address    :string
 #  email      :string
-#  icon       :string
+#  image_url  :string
 #  latitude   :float
 #  longitude  :float
 #  name       :string           not null
