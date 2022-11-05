@@ -1,13 +1,10 @@
 # Koira App
 
-![Continuous Integration](https://github.com/floriandejonckheere/koiraapp-server/workflows/Continuous%20Integration/badge.svg)
-![Continuous Deployment](https://github.com/floriandejonckheere/koiraapp-server/workflows/Continuous%20Deployment/badge.svg)
-
-![Release](https://img.shields.io/github/v/release/floriandejonckheere/code-red?label=Latest%20release)
-![Deployment](https://img.shields.io/github/deployments/floriandejonckheere/code-red/production?label=Deployment)
-
 Koira App is a handy app to meet and greet shelter dogs.
 It's a project for the Junction 2022 Hackathon in Espoo, Finland.
+
+This is the repository containing the backend API for the app.
+For the iOS app, see [rzakhar/koiraapp](https://github.com/rzakhar/koiraapp).
 
 # Setup
 
