@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_222644) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_05_081238) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -76,7 +76,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_222644) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "visits", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.date "date", null: false
+    t.uuid "user_id"
+    t.uuid "dog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_visits_on_dog_id"
+    t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dogs", "shelters", on_delete: :cascade
+  add_foreign_key "visits", "dogs", on_delete: :cascade
+  add_foreign_key "visits", "users", on_delete: :cascade
 end

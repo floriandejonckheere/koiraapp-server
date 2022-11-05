@@ -5,6 +5,8 @@ class Dog < ApplicationRecord
 
   belongs_to :shelter
 
+  has_many :visits, dependent: :destroy
+
   has_many_attached :images
 end
 
