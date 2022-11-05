@@ -1,4 +1,4 @@
-# Koira App
+![Koira App](https://github.com/floriandejonckheere/koiraapp-server/raw/master/koira.png)
 
 Koira App is a handy app to meet and greet shelter dogs.
 It's a project for the Junction 2022 Hackathon in Espoo, Finland.
