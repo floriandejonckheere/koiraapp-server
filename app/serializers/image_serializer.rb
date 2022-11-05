@@ -12,7 +12,7 @@ class ImageSerializer < CacheCrispies::Base
     nil
   end
 
-  serialize :blurhash do
-    "LgHxysD%Nsofs%Rit7of?wRisoWB"
+  serialize :blurhash do |model, _options|
+    model&.metadata&.dig("blurhash")
   end
 end

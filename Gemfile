@@ -38,6 +38,11 @@ gem "cache_crispies"
 # Use sidekiq as asynchronous job queue
 gem "sidekiq"
 
+# Temporary image placeholder
+gem "blurhash"
+gem "rmagick"
+gem "mini_magick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: [:mri, :mingw, :x64_mingw]

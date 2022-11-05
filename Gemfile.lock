@@ -79,6 +79,8 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bcrypt (3.1.18)
+    blurhash (0.1.6)
+      ffi (~> 1.14)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -188,6 +190,7 @@ GEM
     reline (0.3.1)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rmagick (5.0.0)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -261,6 +264,7 @@ PLATFORMS
 DEPENDENCIES
   annotate!
   bcrypt (~> 3.1.7)
+  blurhash
   bootsnap
   cache_crispies
   debug
@@ -268,10 +272,12 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   image_processing (~> 1.2)
+  mini_magick
   overcommit
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rmagick
   rspec
   rspec-rails
   rubocop
