@@ -12,9 +12,5 @@ class DogSerializer < CacheCrispies::Base
             :description,
             :shelter_id
 
-  serialize :images do |model, _options|
-    model.images.map do |i|
-      Rails.application.routes.url_helpers.rails_blob_path(i, only_path: true)
-    end
-  end
+  serialize :images, with: ImageSerializer
 end
