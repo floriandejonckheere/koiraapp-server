@@ -7,7 +7,7 @@ class ImageSerializer < CacheCrispies::Base
   serialize :id
 
   serialize :url do |model, _options|
-    next unless model.attached?
+    next unless model
 
     Rails.application.routes.url_helpers.rails_blob_path(model, only_path: true)
   end
