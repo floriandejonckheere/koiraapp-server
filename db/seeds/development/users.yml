@@ -1,0 +1,11 @@
+---
+- name: Jimi Tuomaala
+  email: jimi.tuomaala@example.com
+- name: Hannes Koivula
+  email: hannes.koivula@example.com
+- name: Lari Mikkola
+  email: lari.mikkola@example.com
+- name: Untamo Partanen
+  email: untamo.partanen@example.com
+- name: Into Isotalo
+  email: into.isotalo@example.com
