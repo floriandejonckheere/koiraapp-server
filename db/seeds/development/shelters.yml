@@ -7,7 +7,6 @@
   phone: 050 414 0000
   email:
   url: http://www.hesy.fi/
-  image_url: https://lh3.ggpht.com/p/AF1QipNu1mDwoBXW5a3meEqiUjAjX1CNYk1tViBcC-nr=s512
 - name: Viikin löytöeläintalo
   type: shelter
   address: Koetilantie 13, 00790 Helsinki
@@ -16,7 +15,6 @@
   phone: 040 1980778
   email:
   url: https://www.viikinloytoelaintalo.fi/
-  image_url: https://lh5.googleusercontent.com/p/AF1QipOn1XQCXMYtVCQJ0hK4EcGc1i4pFhXCRZHfQVwM=w408-h544-k-no
 - name: SEY ry
   type: shelter
   address: Lintulahdenkatu 1000500, Helsinki
@@ -25,7 +23,6 @@
   phone: 0207 528 420
   email:
   url: https://sey.fi/
-  image_url: https://lh5.googleusercontent.com/p/AF1QipPpl07cGeUhNF_sh_XGft1P5tkJH5sY2OiJrFzk=w426-h240-k-no
 - name: Maria Saari
   type: person
   address: Keltamotie 7, 01300 Vantaa

@@ -8,6 +8,8 @@ class Shelter < ApplicationRecord
   validates :name, presence: true
   validates :type, presence: true, inclusion: { in: TYPES }
 
+  has_one_attached :image
+
   has_many :dogs, dependent: :destroy
 end
 
@@ -18,7 +20,6 @@ end
 #  id         :uuid             not null, primary key
 #  address    :string
 #  email      :string
-#  image_url  :string
 #  latitude   :float
 #  longitude  :float
 #  name       :string           not null

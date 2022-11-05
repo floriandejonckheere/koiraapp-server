@@ -9,8 +9,7 @@ class ShelterSerializer < CacheCrispies::Base
             :address,
             :email,
             :phone,
-            :url,
-            :image_url
+            :url
 
   serialize :icon do |model, _options|
     case model.type
@@ -27,6 +26,12 @@ class ShelterSerializer < CacheCrispies::Base
 
   serialize :longitude do |model, _options|
     model.longitude || 24.945831
+  end
+
+  serialize :image_url do |model, _options|
+    next unless model.image.attached?
+
+    Rails.application.routes.url_helpers.rails_blob_path(model.image, only_path: true)
   end
 
   serialize :dogs, with: DogSerializer
