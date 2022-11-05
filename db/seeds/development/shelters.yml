@@ -1,5 +1,6 @@
 ---
 - name: HESY ry
+  type: shelter
   address: Muonamiehentie 7, 00390 Helsinki
   latitude: 60.23112
   longitude: 24.85837
@@ -8,6 +9,7 @@
   url: http://www.hesy.fi/
   image_url: https://lh3.ggpht.com/p/AF1QipNu1mDwoBXW5a3meEqiUjAjX1CNYk1tViBcC-nr=s512
 - name: Viikin löytöeläintalo
+  type: shelter
   address: Koetilantie 13, 00790 Helsinki
   latitude: 60.2228
   longitude: 25.02137
@@ -16,6 +18,7 @@
   url: https://www.viikinloytoelaintalo.fi/
   image_url: https://lh5.googleusercontent.com/p/AF1QipOn1XQCXMYtVCQJ0hK4EcGc1i4pFhXCRZHfQVwM=w408-h544-k-no
 - name: SEY ry
+  type: shelter
   address: Lintulahdenkatu 1000500, Helsinki
   latitude: 60.18389
   longitude: 24.96217
@@ -23,3 +26,11 @@
   email:
   url: https://sey.fi/
   image_url: https://lh5.googleusercontent.com/p/AF1QipPpl07cGeUhNF_sh_XGft1P5tkJH5sY2OiJrFzk=w426-h240-k-no
+- name: Maria Saari
+  type: person
+  address: Keltamotie 7, 01300 Vantaa
+  latitude: 60.291260
+  longitude: 25.027044
+  phone:
+  email:
+  url:

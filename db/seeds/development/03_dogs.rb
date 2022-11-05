@@ -4,10 +4,12 @@ puts "== Creating dogs =="
 
 return if Dog.any?
 
-shelters = Shelter.all
+shelters = Shelter.where(type: "shelter")
 
 YAML.load_file("#{__dir__}/dogs.yml").each do |attributes|
-  dog = Dog.create!(**attributes.merge(shelter: shelters.sample))
+  attributes["shelter"] = Shelter.find_by(name: attributes["shelter"]) || shelters.sample
+
+  dog = Dog.create!(**attributes)
 
   Dir[Rails.root.join("data/#{attributes['name'].downcase}/*.jpg")].each do |f|
     blob = ActiveStorage::Blob.create_and_upload!(io: File.open(f), filename: File.basename(f))

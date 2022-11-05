@@ -12,8 +12,13 @@ class ShelterSerializer < CacheCrispies::Base
             :url,
             :image_url
 
-  serialize :icon do
-    "pawprint.fill"
+  serialize :icon do |model, _options|
+    case model.type
+    when "shelter"
+      "house"
+    when "person"
+      "pawprint.fill"
+    end
   end
 
   serialize :latitude do |model, _options|
