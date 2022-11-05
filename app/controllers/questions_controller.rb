@@ -2,8 +2,6 @@
 
 class QuestionsController < ApplicationController
   def index
-    questions = Question.all
-
-    cache_render QuestionSerializer, questions
+    render plain: File.read(Rails.root.join("data/questions.json"))
   end
 end
