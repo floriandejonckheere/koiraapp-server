@@ -25,7 +25,22 @@ services:
     <<: *app
     tty: true
     ports:
-      - "0.0.0.0:3000:3000"
+      - "3000:3000"
+    labels:
+      traefik.enable: "true"
+      traefik.http.middlewares.koira-tls.redirectscheme.scheme: "https"
+
+      traefik.http.routers.koira.rule: "Host(`koira.dejonckhee.re`)"
+      traefik.http.routers.koira.entrypoints: "web"
+      traefik.http.routers.koira.middlewares: "koira-tls"
+
+      traefik.http.routers.koira-tls.rule: "Host(`koira.dejonckhee.re`)"
+      traefik.http.routers.koira-tls.entrypoints: "websecure"
+      traefik.http.routers.koira-tls.tls: "true"
+      traefik.http.routers.koira-tls.tls.certresolver: "letsencrypt"
+
+      traefik.http.services.koira.loadbalancer.server.port: "3000"
+
 
 volumes:
   postgres:
