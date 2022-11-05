@@ -28,5 +28,5 @@ end
 #
 # Foreign Keys
 #
-#  fk_rails_...  (shelter_id => shelters.id)
+#  fk_rails_...  (shelter_id => shelters.id) ON DELETE => cascade
 #

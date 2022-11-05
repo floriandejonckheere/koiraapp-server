@@ -78,5 +78,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_222644) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "dogs", "shelters"
+  add_foreign_key "dogs", "shelters", on_delete: :cascade
 end

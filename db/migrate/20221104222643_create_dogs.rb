@@ -9,7 +9,7 @@ class CreateDogs < ActiveRecord::Migration[7.0]
       t.string :sex
       t.string :description
 
-      t.references :shelter, foreign_key: true, type: :uuid
+      t.references :shelter, foreign_key: { on_delete: :cascade }, type: :uuid
 
       t.timestamps
     end
