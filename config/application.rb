@@ -39,6 +39,6 @@ module Koira
     config.api_only = true
 
     # Allow remote host
-    config.hosts << "florian.dejonckhee.re"
+    config.hosts << "koira.cloud.dejonckhee.re"
   end
 end

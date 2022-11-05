@@ -25,7 +25,9 @@ services:
     <<: *app
     tty: true
     ports:
-      - "0.0.0.0:3000:3000"
+      - "3000:3000"
+    networks:
+      - fcloud
     labels:
       traefik.enable: "true"
       traefik.http.middlewares.koira-tls.redirectscheme.scheme: "https"
@@ -41,7 +43,10 @@ services:
 
       traefik.http.services.koira.loadbalancer.server.port: "3000"
 
-
 volumes:
   postgres:
   bundle:
+
+networks:
+  fcloud:
+    name: fcloud_default
