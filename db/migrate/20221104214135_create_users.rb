@@ -6,6 +6,11 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email, null: false, index: { unique: true }
       t.string :name, null: false
 
+      t.string :activity
+      t.string :difficulty
+      t.string :size
+      t.string :space
+
       t.timestamps
     end
   end
