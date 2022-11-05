@@ -28,11 +28,7 @@ class ShelterSerializer < CacheCrispies::Base
     model.longitude || 24.945831
   end
 
-  serialize :image_url do |model, _options|
-    next unless model.image.attached?
-
-    Rails.application.routes.url_helpers.rails_blob_path(model.image, only_path: true)
-  end
+  serialize :image, with: ImageSerializer
 
   serialize :dogs, with: DogSerializer
 end
