@@ -10,7 +10,11 @@ namespace :database do
       # Turn off SQL log
       ActiveRecord::Base.logger = nil
 
-      Dir[Rails.root.join("db/seeds/*.rb")].each { |f| require f }
+      Dir[Rails.root.join("db/seeds/*.rb")].each do |f|
+        ActiveRecord::Base.transaction do
+          require f
+        end
+      end
     end
 
     desc "Seed development database"
@@ -18,7 +22,11 @@ namespace :database do
       # Turn off SQL log
       ActiveRecord::Base.logger = nil
 
-      Dir[Rails.root.join("db/seeds/development/*.rb")].each { |f| require f }
+      Dir[Rails.root.join("db/seeds/development/*.rb")].each do |f|
+        ActiveRecord::Base.transaction do
+          require f
+        end
+      end
     end
   end
 end
