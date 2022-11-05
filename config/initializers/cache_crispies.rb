@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 CacheCrispies.configure do |conf|
-  conf.etags = true
+  conf.etags = false
 end
