@@ -28,7 +28,10 @@ class ShelterSerializer < CacheCrispies::Base
     model.longitude || 24.945831
   end
 
-  serialize :image, with: ImageSerializer
+  serialize :image do |model, _options|
+    next unless model.image.attached?
+    ImageSerializer.new(model.image).as_json
+  end
 
   serialize :dogs, with: DogSerializer
 end
