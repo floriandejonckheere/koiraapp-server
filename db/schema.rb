@@ -49,6 +49,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_081238) do
     t.date "birthdate"
     t.string "sex"
     t.string "description"
+    t.string "activity"
+    t.string "difficulty"
+    t.string "size"
+    t.string "space"
     t.uuid "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

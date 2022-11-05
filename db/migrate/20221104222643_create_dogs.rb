@@ -9,6 +9,11 @@ class CreateDogs < ActiveRecord::Migration[7.0]
       t.string :sex
       t.string :description
 
+      t.string :activity
+      t.string :difficulty
+      t.string :size
+      t.string :space
+
       t.references :shelter, foreign_key: { on_delete: :cascade }, type: :uuid
 
       t.timestamps

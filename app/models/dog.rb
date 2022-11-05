@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Dog < ApplicationRecord
+  include HasPreferences
+
   validates :name, presence: true
 
   belongs_to :shelter
@@ -15,10 +17,14 @@ end
 # Table name: dogs
 #
 #  id          :uuid             not null, primary key
+#  activity    :string
 #  birthdate   :date
 #  description :string
+#  difficulty  :string
 #  name        :string           not null
 #  sex         :string
+#  size        :string
+#  space       :string
 #  species     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
